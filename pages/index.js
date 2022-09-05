@@ -19,13 +19,13 @@ export default function Home() {
         <div className='row justify-content-center'>
           <div className='col-12 col-md-4'>
             <h2>SSO Login Demo</h2>
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
+            <div className="mb-3">
+              <label htmlFor="exampleFormControlInput1" className="form-label">Email address</label>
+              <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
             </div>
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Password</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="password" />
+            <div className="mb-3">
+              <label htmlFor="exampleFormControlInput1" className="form-label">Password</label>
+              <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="password" />
             </div>
 
             <button className='btn btn-primary w-100' onClick={() => {
