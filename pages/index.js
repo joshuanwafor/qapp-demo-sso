@@ -1,8 +1,11 @@
 import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { useRouter } from 'next/router'
 
 export default function Home() {
+  const router = useRouter()
+  console.log(router.query);
   return (
     <main className='d-flex flex-column min-vh-100'>
       <Head>
@@ -12,25 +15,26 @@ export default function Home() {
       </Head>
       <Header />
 
-      <div className='px-4 py-5 my-5 text-center flex-grow-1'>
-        <h1 className='display-5 fw-bold'>Next.js + Bootstrap ❤️</h1>
-        <div className='col-lg-6 mx-auto'>
-          <p className='lead mb-4'>
-            Quickly design and customize responsive mobile-first sites with
-            Bootstrap, the world’s most popular front-end open source toolkit,
-            featuring Sass variables and mixins, responsive grid system,
-            extensive prebuilt components, and powerful JavaScript plugins.
-          </p>
-          <div className='d-grid gap-2 d-sm-flex justify-content-sm-center'>
-            <button type='button' className='btn btn-primary btn-lg px-4 gap-3'>
-              Primary button
-            </button>
-            <button
-              type='button'
-              className='btn btn-outline-secondary btn-lg px-4'
-            >
-              Secondary
-            </button>
+      <div className='container my-5'>
+        <div className='row justify-content-center'>
+          <div className='col-12 col-md-4'>
+            <h2>SSO Login Demo</h2>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Password</label>
+              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="password" />
+            </div>
+
+            <button className='btn btn-primary w-100' onClick={() => {
+              window.open(router.query.redirect);
+            }}>Authenticate</button>
+
+            <div className='text-align-center my-3' style={{ textAlign: "center" }}>
+              You will be redirected to {`{${router.query.redirect}}`} after you login;
+            </div>
           </div>
         </div>
       </div>
